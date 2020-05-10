@@ -31,5 +31,20 @@
 
         public User User { get; set; }
 
+        // solo de lectura
+        public string  ImageFullPath {
+
+            get
+            {
+                if (string.IsNullOrEmpty(this.ImageUrl))
+                {
+                    return null;
+                }
+
+                return $"https://sisthelshop.azurewebsites.net{this.ImageUrl.Substring(1)}";
+            }
+
+        }
+
     }
 }
