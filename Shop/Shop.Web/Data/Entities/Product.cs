@@ -32,8 +32,8 @@
         public User User { get; set; }
 
         // solo de lectura
-        public string  ImageFullPath {
-
+        public string  ImageFullPath 
+        {
             get
             {
                 if (string.IsNullOrEmpty(this.ImageUrl))
