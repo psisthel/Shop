@@ -15,8 +15,10 @@ namespace Shop.UIForms.ViewModels
 
         public ObservableCollection<Product> Products
         {
-            get => this.products;
-            set => this.SetValue(ref this.products, value);
+            //get => this.products;
+            //set => this.SetValue(ref this.products, value);
+            get { return this.products; }
+            set { this.SetValue(ref this.products, value); }
         }
 
         public bool IsRefreshing
@@ -51,8 +53,8 @@ namespace Shop.UIForms.ViewModels
                 return;
             }
 
-            var myProducts = (List<Product>)response.Result;
-            this.Products = new ObservableCollection<Product>(myProducts);
+            var products = (List<Product>)response.Result;
+            this.Products = new ObservableCollection<Product>(products);
         }
     }
 }
